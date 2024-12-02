@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="170"
+        Width="250" Height="170"
+        x:Class="PeterAlert.MainWindow"
+        Title="Peter Alert"
+        CanResize="False"
+        Icon="/Assets/Peter.png"
+        >
+    <Panel>
+        <Rectangle Fill="#dadada"/>
+        <Grid ColumnDefinitions="100,1.5*,4*" RowDefinitions="Auto,Auto,Auto"  Margin="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Panel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center">
+                <!-- <Rectangle Height="100" Width="100" Fill="LightGray"/> -->
+                <Image Margin="20" Height="70" Width="70" Stretch="UniformToFill"
+                       Source="/Assets/Peter.png"/>
+            </Panel>
+            <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" 
+                    Width="70"
+                    Click="Button_OnClick"
+                    >OK</Button>
+        </Grid>
+    </Panel>
+</Window>
