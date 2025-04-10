@@ -1,6 +1,6 @@
 ﻿Get-ChildItem ".\Assets" | ForEach-Object {
     $Filename = $_.BaseName
-    echo $Filename
+    echo "Working on Building for $Filename"
 
     (Get-Content MainWindow.axaml) | ForEach-Object {
         $_ -replace "Peter", $Filename
