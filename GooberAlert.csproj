@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net7.0</TargetFramework>
@@ -9,7 +9,7 @@
 		<PublishTrimmed>true</PublishTrimmed>
 		<PublishSingleFile>true</PublishSingleFile>
 		<RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
-		<AssemblyName>Pet Alert</AssemblyName>
+		<AssemblyName>Peter Alert</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>

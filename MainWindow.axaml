@@ -7,7 +7,7 @@
         x:Class="GooberAlert.MainWindow"
         Title="Pet Alert"
         CanResize="False"
-        Icon="/Assets/Pet.png"
+        Icon="/Assets/Peter.png"
         >
     <Panel>
         <Rectangle Fill="#dadada"/>
@@ -15,7 +15,7 @@
             <Panel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center">
                 <!-- <Rectangle Height="100" Width="100" Fill="LightGray"/> -->
                 <Image Margin="20" Height="70" Width="70" Stretch="UniformToFill"
-                       Source="/Assets/Pet.png"/>
+                       Source="/Assets/Peter.png"/>
             </Panel>
             <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" 
                     Width="70"
