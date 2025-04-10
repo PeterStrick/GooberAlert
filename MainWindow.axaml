@@ -5,7 +5,7 @@
         mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="170"
         Width="250" Height="170"
         x:Class="GooberAlert.MainWindow"
-        Title="Pet Alert"
+        Title="Peter Alert"
         CanResize="False"
         Icon="/Assets/Peter.png"
         >
