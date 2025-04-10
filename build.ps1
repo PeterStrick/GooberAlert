@@ -5,11 +5,11 @@
         $_ -replace "Peter", $Filename
     } | Set-Content MainWindow.axaml
 
-    (Get-Content PeterAlert.csproj) | ForEach-Object {
+    (Get-Content GooberAlert.csproj) | ForEach-Object {
         $_ -replace "Peter", $Filename
-    } | Set-Content PeterAlert.csproj
+    } | Set-Content GooberAlert.csproj
 
-    dotnet publish -c Release --sc true /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:IncludeAllContentForSelfExtract=true
+    dotnet publish GooberAlert.csproj -c Release --sc true /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:IncludeAllContentForSelfExtract=true -o "./build/$Filename"
 
-    git reset --hard
+    git reset
 }
