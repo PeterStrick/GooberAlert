@@ -1,5 +1,6 @@
 ﻿Get-ChildItem ".\Assets" | ForEach-Object {
     $Filename = $_.BaseName
+    echo $Filename
 
     (Get-Content MainWindow.axaml) | ForEach-Object {
         $_ -replace "Peter", $Filename
@@ -11,5 +12,5 @@
 
     dotnet publish GooberAlert.csproj -c Release --sc true /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:IncludeAllContentForSelfExtract=true -o "./build/$Filename"
 
-    git reset
+    git reset --hard
 }
