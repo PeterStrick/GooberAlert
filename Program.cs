@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace PeterAlert;
+namespace GooberAlert;
 
 class Program
 {

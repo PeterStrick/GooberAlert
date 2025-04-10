@@ -4,10 +4,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="170"
         Width="250" Height="170"
-        x:Class="PeterAlert.MainWindow"
-        Title="Peter Alert"
+        x:Class="GooberAlert.MainWindow"
+        Title="Pet Alert"
         CanResize="False"
-        Icon="/Assets/Peter.png"
+        Icon="/Assets/Pet.png"
         >
     <Panel>
         <Rectangle Fill="#dadada"/>
@@ -15,7 +15,7 @@
             <Panel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center">
                 <!-- <Rectangle Height="100" Width="100" Fill="LightGray"/> -->
                 <Image Margin="20" Height="70" Width="70" Stretch="UniformToFill"
-                       Source="/Assets/Peter.png"/>
+                       Source="/Assets/Pet.png"/>
             </Panel>
             <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" 
                     Width="70"

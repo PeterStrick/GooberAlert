@@ -9,7 +9,7 @@
         $_ -replace "Peter", $Filename
     } | Set-Content PeterAlert.csproj
 
-    dotnet publish -c Release --sc true /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:IncludeAllContentForSelfExtract=true -o "./build/$Filename"
+    dotnet publish -c Release --sc true /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:IncludeAllContentForSelfExtract=true
 
-    git reset
+    git reset --hard
 }
