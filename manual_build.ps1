@@ -118,7 +118,7 @@ function Get-CheckResults {
         Exit
     }
 
-    if (![String]::IsNullOrWhiteSpace($Music) && !$music_extensions -contains [System.IO.Path]::GetExtension($Music).ToLower()) {
+    if (![String]::IsNullOrWhiteSpace($Music) -and !$music_extensions -contains [System.IO.Path]::GetExtension($Music).ToLower()) {
         Write-Error "[Error] Music File is not a valid file format. Please use either a mp3, wav, ogg, or flac File"
         Exit
     }
