@@ -104,6 +104,8 @@ function Get-CheckResults {
     $image_extensions = ".bmp",".jpg",".jpeg",".png",".gif"
     $music_extensions = ".mp3",".wav",".ogg",".flac"
 
+    Clear-Host
+
     if ($Platform -contains "linux" -and ![String]::IsNullOrWhiteSpace($Music)) {
         Write-Warning "[Warning] Audio on Linux requires the sfml and csfml system packages to be installed or the Application will not run."
     }
@@ -123,7 +125,18 @@ function Get-CheckResults {
         Exit
     }
 
+    Write-Host ""
     Write-Host "[Info] If you have any unused Assets in the Assets folder, then please remove them before continuing, as they will increase the Application File Size otherwise"
+
+    # Show Variables
+    Write-Host ""
+    Write-Host "Platform: $($Platform)"
+    Write-Host "Name: $($Name)"
+    Write-Host "Button Name: $($ButtonName)"
+    Write-Host "Icon: $($AppIcon)"
+    Write-Host "Image: $($AppImage)"
+    Write-Host "Music: $($Music)"
+
     Write-Host ""
     Write-Host "Press any Key to continue."
     $null = Read-Host
