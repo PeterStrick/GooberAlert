@@ -123,7 +123,7 @@ function Get-CheckResults {
         Exit
     }
 
-    Write-Information "[Info] If you have any unused Assets in the Assets folder, then please remove them before continuing, as they will increase the Application File Size otherwise"
+    Write-Host "[Info] If you have any unused Assets in the Assets folder, then please remove them before continuing, as they will increase the Application File Size otherwise"
     Write-Host ""
     Write-Host "Press any Key to continue."
     $null = Read-Host
