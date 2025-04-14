@@ -67,11 +67,21 @@ function Get-AppImage {
     return Read-Host "Selected Asset"
 }
 
+# Get If Image is animated
+function Get-IfAnimated {
+    if ([System.IO.Path]::GetExtension($AppImage).ToLower() -eq ".gif" ) {
+        return $true
+    } else {
+        return $false
+    }
+}
+
 $Platform = Show-Menu
 $Name = Get-Name
 $ButtonName = Get-ButtonName
 $AppIcon = Get-AppIcon
 $AppImage = Get-AppImage
+$IsAnimated = Get-IfAnimated
 
 # Replace Name
 (Get-Content MainWindow.axaml) | ForEach-Object {
@@ -88,13 +98,31 @@ $AppImage = Get-AppImage
 
 # Replace App Icon
 (Get-Content MainWindow.axaml) | ForEach-Object {
-    $_ -replace 'Icon="/Assets/Peter.png"', "Source='$($AppIcon)'"
+    $_ -replace 'Icon="/Assets/Peter.png"', "Icon='$($AppIcon)'"
 } | Set-Content MainWindow.axaml -Encoding UTF8
 
-# Replace App Image
-(Get-Content MainWindow.axaml) | ForEach-Object {
-    $_ -replace 'Source="/Assets/Peter.png"', "Source='$($AppImage)'"
-} | Set-Content MainWindow.axaml -Encoding UTF8
+# App Image switch
+
+switch ($IsAnimated) {
+    $true {
+        # Replace Source Tag
+        (Get-Content MainWindow.axaml) | ForEach-Object {
+            $_ -replace "Source=", "anim:ImageBehavior.AnimatedSource="
+        } | Set-Content MainWindow.axaml -Encoding UTF8
+
+        # Replace App Image
+        (Get-Content MainWindow.axaml) | ForEach-Object {
+            $_ -replace "avares://$($Name)/Assets/Peter.png", "avares://$($Name)/$($AppImage)"
+        } | Set-Content MainWindow.axaml -Encoding UTF8
+    } $false {
+        # Replace App Image
+        (Get-Content MainWindow.axaml) | ForEach-Object {
+            $_ -replace "avares://$($Name)/Assets/Peter.png", "avares://$($Name)/$($AppImage)"
+        } | Set-Content MainWindow.axaml -Encoding UTF8
+    }
+}
+
+pause
 
 dotnet publish GooberAlert.csproj -c Release -r $Platform --sc true -o "./build/$Name"
 
