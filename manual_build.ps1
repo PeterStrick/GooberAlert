@@ -88,12 +88,12 @@ $AppImage = Get-AppImage
 
 # Replace App Icon
 (Get-Content MainWindow.axaml) | ForEach-Object {
-    $_ -replace 'Icon="/Assets/Peter.png"', 'Icon="$($AppIcon)"'
+    $_ -replace 'Icon="/Assets/Peter.png"', "Source='$($AppIcon)'"
 } | Set-Content MainWindow.axaml -Encoding UTF8
 
 # Replace App Image
 (Get-Content MainWindow.axaml) | ForEach-Object {
-    $_ -replace 'Source="/Assets/Peter.png"', 'Source="$($AppImage)"'
+    $_ -replace 'Source="/Assets/Peter.png"', "Source='$($AppImage)'"
 } | Set-Content MainWindow.axaml -Encoding UTF8
 
 dotnet publish GooberAlert.csproj -c Release -r $Platform --sc true -o "./build/$Name"
