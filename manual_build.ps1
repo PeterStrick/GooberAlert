@@ -1,6 +1,6 @@
 ﻿# Get Platform to build the Goobers for
 function Show-Menu {
-    Clear
+    Clear-Host
     Write-Host "Please enter the respective Number of a Platform to build for"
     Write-Host ""
     Write-Host "(1) Windows x64"
@@ -35,7 +35,7 @@ function Show-Menu {
 
 # Get Name
 function Get-Name {
-    Clear
+    Clear-Host
     Write-Host "Enter the Name for the Goober Alert"
     Write-Host ""
     return Read-Host "Selected Name"
@@ -43,7 +43,7 @@ function Get-Name {
 
 # Get Button Name
 function Get-ButtonName {
-    Clear
+    Clear-Host
     Write-Host "Enter the Button Name for the Goober Alert"
     Write-Host ""
     return Read-Host "Selected Button Name"
@@ -51,7 +51,7 @@ function Get-ButtonName {
 
 # Get App Icon
 function Get-AppIcon {
-    Clear
+    Clear-Host
     Write-Host "Enter the Path for the App Icon"
     Write-Host "This has to be inside the Assets folder. Eg: /Assets/goober.png"
     Write-Host ""
@@ -60,7 +60,7 @@ function Get-AppIcon {
 
 # Get App Icon
 function Get-AppImage {
-    Clear
+    Clear-Host
     Write-Host "Enter the Path for the App Image"
     Write-Host "This has to be inside the Assets folder. Eg: /Assets/goober.gif"
     Write-Host ""

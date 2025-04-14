@@ -1,6 +1,6 @@
 ﻿# Get Platform to build the Goobers for
 function Show-Menu {
-    Clear
+    Clear-Host
     Write-Host "Please enter the respective Number of a Platform to build for"
     Write-Host ""
     Write-Host "(1) Windows x64"
