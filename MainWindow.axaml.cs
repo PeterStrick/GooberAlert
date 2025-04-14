@@ -20,13 +20,19 @@ public partial class MainWindow : Window
     }
 
     public static void PlayAudio() {
+        // Stream Audio from Avalonia into SFML
         var audio = new SFML.Audio.Music(AssetLoader.Open(new Uri("avares://Peter Alert/Assets/audio.mp3")));
+
+        // A Thread is required or otherwise the Audio object will get disposed causing playback to abruptly stop??
+        // Also thanks to my cute bf for finding this out :3
         new Thread(() => {
             while (true) {
                 if (audio.Status != SFML.Audio.SoundStatus.Playing) audio.Play();
                 Thread.Sleep(100);
             }
         }).Start();
+
+        // Play the Audio
         audio.Play();
     }
 }
