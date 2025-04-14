@@ -104,7 +104,7 @@ function Get-CheckResults {
     $image_extensions = ".bmp",".jpg",".jpeg",".png",".gif"
     $music_extensions = ".mp3",".wav",".ogg",".flac"
 
-    if ($Platform -contains "linux" && ![String]::IsNullOrWhiteSpace($Music)) {
+    if ($Platform -contains "linux" -and ![String]::IsNullOrWhiteSpace($Music)) {
         Write-Warning "[Warning] Audio on Linux requires the sfml and csfml system packages to be installed or the Application will not run."
     }
 
