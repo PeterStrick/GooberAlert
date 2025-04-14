@@ -60,7 +60,7 @@ function Get-AppIcon {
 
 # Get App Icon
 function Get-AppImage {
-    Clear-Host
+    Clear
     Write-Host "Enter the Path for the App Image"
     Write-Host "This has to be inside the Assets folder. Eg: /Assets/goober.gif"
     Write-Host ""
@@ -69,7 +69,7 @@ function Get-AppImage {
 
 $Platform = Show-Menu
 $Name = Get-Name
-$ButtonName = Get-Name
+$ButtonName = Get-ButtonName
 $AppIcon = Get-AppIcon
 $AppImage = Get-AppImage
 
