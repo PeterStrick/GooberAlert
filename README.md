@@ -2,11 +2,17 @@
 
 A fork of [PeterAlert](https://github.com/NumixAvali/PeterAlert) which allows multiple Goober Alerts to be created from their respective PNG File in the Assets Folder.
 
-# Usage
+# Simple Usage
 
 1. Clone the Github Repo to somewhere
 2. Add/Replace PNGs in the Assets Folder
 3. Run the `build.ps1` PowerShell Script
+
+# Advanced Usage
+
+1. Clone the Github Repo to somewhere
+2. Add/Replace Images / Audio in the Assets Folder
+3. Run the `manual_build.ps1` PowerShell Script
 
 ## Note
 
@@ -14,6 +20,7 @@ The produced executables Name depends on the Name of the PNG File in the Assets 
 
 ## Building
 
-- Git and .Net 7 are required to Build the project
+- Git and .Net 8 are required to Build the project
 - The use of the build.ps1 Script is to automatically replace each instance of the Word `Peter` with the File name of the PNG File, this can be rewritten in another Language eg Bash or done manually as the Word `Peter` only appears inside of `MainWindow.axaml` and `GooberAlert.csproj`
   - After those words were replaced and dotnet published the executable, a `git reset --hard` is done to revert the renaming and move onto the next PNG File
+- Audio on Linux requires the `sfml` and `csfml` System packages to be installed
