@@ -19,7 +19,10 @@
         <PackageReference Include="Avalonia" Version="11.2.6" />
         <PackageReference Include="Avalonia.Desktop" Version="11.2.6" />
         <PackageReference Include="Classic.Avalonia.Theme" Version="11.2.0.7" />
+        <PackageReference Include="HanumanInstitute.LibMpv" Version="0.9.1" />
         <PackageReference Include="LibVLCSharp" Version="3.9.2" />
+        <PackageReference Include="mpv" Version="0.28.2" />
+        <PackageReference Include="Mpv.NET" Version="1.2.0" />
     </ItemGroup>
 
     <ItemGroup>

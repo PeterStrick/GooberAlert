@@ -2,7 +2,7 @@ using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Platform;
-using LibVLCSharp.Shared;
+using Mpv.NET;
 
 namespace GooberAlert;
 
@@ -19,15 +19,22 @@ public partial class MainWindow : Window
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
         Environment.Exit(0);
+
+        PlayAudio();
     }
 
     public static void PlayAudio() {
-        // Load libVLC libraries
-        Core.Initialize();
+        var a = new Mpv.NET.Player.MpvPlayer();
+        var hi = AssetLoader.Open(new Uri("avares://Peter Alert/Assets/audio.mp3"));
+        a.AddAudio(new Uri("avares://Peter Alert/Assets/audio.mp3").ToString());
 
-        using var libVLC = new LibVLC(enableDebugLogs: true);
-        using var media = new Media(libVLC, new StreamMediaInput(AssetLoader.Open(new Uri("avares://Peter Alert/Assets/audio.mp3"))));
-        using var mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.Play();
+        // var b = new HanumanInstitute.LibMpv.MpvContextBase();
+
+        // b.Initialize();
+        // var c = new HanumanInstitute.LibMpv.MpvContext();
+
+        // // c.-
+        
+        
     }
 }
