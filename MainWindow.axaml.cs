@@ -12,12 +12,13 @@ public partial class MainWindow : Window {
 
     public MainWindow() {
         InitializeComponent();
-        //Replace_with_audio
 
         // Background Worker
         AudioBG = new BackgroundWorker();
         AudioBG.WorkerSupportsCancellation = true;
         AudioBG.DoWork += AudioBG_DoWork;
+
+        //Replace_with_audio
     }
 
     private static void Button_OnClick(object? sender, RoutedEventArgs e) {
