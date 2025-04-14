@@ -9,6 +9,7 @@
         Title="Peter Alert"
         CanResize="False"
         Icon='/Assets/Peter.png'
+        Closing="Window_OnClosing"
         >
     <Panel>
         <Rectangle Fill="#dadada"/>
