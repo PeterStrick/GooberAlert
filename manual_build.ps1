@@ -146,7 +146,7 @@ Get-CheckResults
 
 # Replace App Icon
 (Get-Content MainWindow.axaml) | ForEach-Object {
-    $_ -replace 'Icon="/Assets/Peter.png"', "Icon='$($AppIcon)'"
+    $_ -replace "Icon='/Assets/Peter.png'", "Icon='$($AppIcon)'"
 } | Set-Content MainWindow.axaml -Encoding UTF8
 
 # App Image switch
@@ -174,6 +174,11 @@ if (![String]::IsNullOrWhiteSpace($Music)) {
     # Enable Audio Function
     (Get-Content MainWindow.axaml.cs) | ForEach-Object {
         $_ -replace "//Replace_with_audio", "PlayAudio();"
+    } | Set-Content MainWindow.axaml.cs -Encoding UTF8
+
+    # Replace Audio Namespace
+    (Get-Content MainWindow.axaml.cs) | ForEach-Object {
+        $_ -replace "avares://Peter Alert/", "avares://$($Name)/"
     } | Set-Content MainWindow.axaml.cs -Encoding UTF8
 
     # Replace Audio URI
