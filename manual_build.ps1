@@ -60,7 +60,7 @@ function Get-AppIcon {
 
 # Get App Icon
 function Get-AppImage {
-    Clear
+    Clear-Host
     Write-Host "Enter the Path for the App Image"
     Write-Host "This has to be inside the Assets folder. Eg: /Assets/goober.gif"
     Write-Host ""
