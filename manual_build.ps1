@@ -112,17 +112,15 @@ switch ($IsAnimated) {
 
         # Replace App Image
         (Get-Content MainWindow.axaml) | ForEach-Object {
-            $_ -replace "avares://$($Name)/Assets/Peter.png", "avares://$($Name)/$($AppImage)"
+            $_ -replace "avares://$($Name)/Assets/Peter.png", "avares://$($Name)$($AppImage)"
         } | Set-Content MainWindow.axaml -Encoding UTF8
     } $false {
         # Replace App Image
         (Get-Content MainWindow.axaml) | ForEach-Object {
-            $_ -replace "avares://$($Name)/Assets/Peter.png", "avares://$($Name)/$($AppImage)"
+            $_ -replace "avares://$($Name)/Assets/Peter.png", "avares://$($Name)$($AppImage)"
         } | Set-Content MainWindow.axaml -Encoding UTF8
     }
 }
-
-pause
 
 dotnet publish GooberAlert.csproj -c Release -r $Platform --sc true -o "./build/$Name"
 
