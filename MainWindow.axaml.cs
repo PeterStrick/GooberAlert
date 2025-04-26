@@ -25,7 +25,6 @@ public partial class MainWindow : Window {
         Environment.Exit(0);
     }
 
-
     // A Thread is required or otherwise the Audio object will get disposed causing playback to abruptly stop??
     // Also thanks to my cute bf for finding this out :3
     private void AudioBG_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) {
