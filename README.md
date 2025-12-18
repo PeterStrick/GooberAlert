@@ -1,4 +1,7 @@
-﻿# Goober Alert
+> [!WARNING]
+> This Repository has moved to GitLab and is now read-only
+
+# Goober Alert
 
 A fork of [PeterAlert](https://github.com/NumixAvali/PeterAlert) which allows multiple Goober Alerts to be created from their respective PNG File in the Assets Folder.
 
